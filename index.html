@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="quiz-container">
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+            <h2>🧠 Knowledge Quiz</h2>
+            <p>Test your knowledge about incredible India! You'll have 30 seconds per question. Answer all questions to
+                see your final score.</p>
+            <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
+            <div id="scoreHistory" class="score-history hidden">
+                <h3>📊 Previous Scores</h3>
+                <div id="scoresList"></div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="hidden">
+            <div class="quiz-header">
+                <h1 class="quiz-title">India Knowledge Quiz</h1>
+                <div class="quiz-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Question</div>
+                        <div class="stat-value" id="questionCounter">1 / 10</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Timer</div>
+                        <div class="stat-value timer" id="timer">30</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Score</div>
+                        <div class="stat-value" id="scoreDisplay">0</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-container">
+                    <div class="question-number" id="questionNumber">Question 1 of 10</div>
+                    <div class="question-text" id="questionText"></div>
+                </div>
+
+                <div class="options-container" id="optionsContainer">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()"
+                        disabled>Previous</button>
+                    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="resultScreen" class="result-screen hidden">
+            <h2>🎉 Quiz Complete!</h2>
+            <div class="result-score" id="finalScore">0/10</div>
+            <div class="result-message" id="resultMessage"></div>
+            <button class="btn btn-primary" onclick="restartQuiz()">Take Quiz Again</button>
+            <div id="finalScoreHistory" class="score-history">
+                <h3>📊 Your Score History</h3>
+                <div id="finalScoresList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
