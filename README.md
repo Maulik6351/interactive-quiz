@@ -15,6 +15,6 @@ An interactive and responsive multiple-choice quiz web application built using *
 
 - HTML5  
 - CSS3 (including animations and gradients)  
-- Vanilla JavaScript  
+- JavaScript  
 
 
